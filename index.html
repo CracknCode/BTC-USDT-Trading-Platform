@@ -1,0 +1,33 @@
+<html lang="en">
+
+<head>
+
+    <title>Trade Platform</title>
+
+</head>
+
+<body>
+    <h1>BTC/USDT Price Live</h1>
+    <!-- <p>CTRL+SHIFT+I to view Console</p> -->
+
+    <h2>Trades</h2>
+
+    <div id="trades"></div>
+
+    <script>
+        var binanceSocket = new WebSocket("wss://stream.binance.com:9443/ws/btcusdt@trade");
+
+        var tradediv = document.getElementById('trades')
+
+        binanceSocket.onmessage = function (event) {
+            console.log(event.data);
+
+            var messageObject = JSON.parse(event.data)
+            
+            tradediv.append(messageObject.p)
+        }
+
+    </script>
+</body>
+
+</html>
