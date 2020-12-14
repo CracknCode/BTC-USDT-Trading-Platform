@@ -1,0 +1,13 @@
+body {
+
+    background-color: rgb(73, 73, 73)
+}
+
+h1 {
+    color: rgb(236, 136, 5);
+    text-align: center;
+}
+
+#chart {
+    text-align: center;
+}
